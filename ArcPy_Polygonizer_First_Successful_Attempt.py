@@ -1,7 +1,7 @@
 # ArcGIS Pro / ArcPy 3.x
 # Polygonizer that RE-WRITES the same outputs each run (truncate + append).
 # Builds intersections from the street network, creates plus-shaped intersection polygons
-# with legs, segments interconnects by level, trims overlaps, and writes stable outputs.
+# with legs, segments interconnect by level, trims overlaps, and writes stable outputs.
 
 import arcpy
 from collections import defaultdict
