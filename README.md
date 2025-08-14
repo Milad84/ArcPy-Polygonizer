@@ -10,7 +10,7 @@ This implementation utilizes a series of tools already available in ArcPro, incl
 * The Vision Zero team, as part of the Austin Transportation and Public Works Department, operates a database of crashes in and around the Austin city limits. A point position tracks these crashes, and to conduct an analysis of the city's roadways about crash location and crash severity, a set of polygons was created based on the street network. These polygons are of approximately equal area and have been formed in such a way that intersections are built into a single shape, and interconnecting roads between intersections are divided into equal segments. By aggregating crashes into these polygons, comparisons become possible between intersections and road segments.
 
 # Goal
-* Having the possibility of creating polygons inside the ArcPro environment.
+* Having the possibility of creating custom polygons inside the ArcPro environment.
   
 # Highlights
 
