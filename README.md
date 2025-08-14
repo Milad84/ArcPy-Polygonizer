@@ -1,13 +1,13 @@
-# ArcPy-Polygonizer
+
 
 <img width="823" height="626" alt="image" src="https://github.com/user-attachments/assets/492d7507-c232-4257-9ef0-dfc506c6d133" />
 
-ArcPy Polygonizer (ArcGIS Pro / ArcPy 3.x)
+# ArcPy Polygonizer (ArcGIS Pro / ArcPy 3.x)
 
 Generate clean, attribute-rich street area polygons from a centerline network — fast, reproducible, and resumable.
 This implementation uses pairwise geoprocessing tools, a robust in-GDB near table, and FLAT-ended line buffers. The final layer contains a single street_levels field and an is_intersection flag.
 
-Highlights
+# Highlights
 
 Resumable: each stage can be skipped unless forced to rebuild.
 
@@ -19,13 +19,13 @@ FLAT buffer ends for legs and interconnects (matches baseline cartography).
 
 Clean attributes: location_name, single street_levels, is_intersection.
 
-Requirements
+# Requirements
 
 ArcGIS Pro 3.x with ArcPy.
 
 Feet-based projected CRS (default: EPSG 2277 – NAD 1983 StatePlane Texas Central (US Feet)).
 
-Tools used:
+# Tools used:
 
 PairwiseIntersect, PairwiseDissolve, PairwiseBuffer
 
@@ -35,7 +35,7 @@ SpatialJoin, Merge, Buffer, Append, Dissolve
 
 If a pairwise tool isn’t available in your environment, swap to the classic equivalent (potentially slower).
 
-Input Assumptions
+# Input Assumptions
 
 CTN_FC is a polyline centerline layer with:
 
@@ -45,7 +45,7 @@ A name field: prefers FULL_STREET_NAME, otherwise STREET_NAME.
 
 Centerlines are reasonably snapped (default matching tolerance TOUCH_TOL = 5 ft).
 
-Outputs
+#Outputs
 
 All outputs are written to the target geodatabase.
 
@@ -56,7 +56,7 @@ Polygonizer_IntersectionPolys	Polygon	Node cores + FLAT-ended leg buffers (union
 Polygonizer_InterconnectPolys	Polygon	Segmented FLAT-ended buffers between intersections
 Polygonizer_FinalPolys	Polygon	Final merged surface with attributes
 
-Final attribute schema
+# Final attribute schema
 
 location_name (TEXT, 250): comma-joined unique street names intersecting the polygon.
 
@@ -66,10 +66,11 @@ is_intersection (SHORT): 1 if the polygon intersects ≥1 true-intersection poin
 
 The writer guarantees exactly one street_levels field on the final output.
 
-Configuration
+# Configuration
 
 Edit these values at the top of the script:
 
+```python
 # Paths & spatial reference
 GDB   = r"G:\ATD\ACTIVE TRANS\Vision Zero\GIS\New Vision Zero Polygons_2025\ArcPyPolygonizer.gdb"
 CTN_FC = r"G:\ATD\ACTIVE TRANS\Vision Zero\GIS\New Vision Zero Polygons_2025\ArcPyPolygonizer.gdb\CTN_Test"
@@ -91,9 +92,9 @@ FORCE_INTERCONNECT_POLYS     = True
 FORCE_TRIM_INTERCONNECTS     = True
 FORCE_FINAL_POLYS            = True
 FORCE_ENRICH_ATTRIBUTES      = True
+```
 
-
-Tips
+# Tips
 
 If matching seems inconsistent, try TOUCH_TOL = 8–10.
 
