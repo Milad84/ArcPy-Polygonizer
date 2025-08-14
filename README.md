@@ -1,15 +1,17 @@
 # ArcPy Polygonizer (ArcGIS Pro / ArcPy 3.x)
 
 Generate clean, attribute-rich street area polygons from a centerline network — fast, reproducible, and resumable.
-This implementation uses pairwise geoprocessing tools, a robust in-GDB near table, and FLAT-ended line buffers. The final layer contains a single street_levels field and an is_intersection flag.
-
+This implementation utilizes a series of tools already available in ArcPro, including but not limited to pairwise geoprocessing tools, a robust in-GDB near table, and FLAT-ended line buffers, to name a few. The final layer can inherit values from the underlying network of streets. These Polygons are used to track the distribution of crashes in a segmented fashion to identify places with a higher frequency of fatal and serious injury crashes.
 
 <img width="829" height="697" alt="image" src="https://github.com/user-attachments/assets/c1c2187a-cee5-4eb7-91c0-1495936f0394" />
 
 # Background
 * This script is inspired by the work done by my colleague Frank Hereford (https://github.com/frankhereford) at the Data and Technology Services of the Austin transportation and Public Works Department. The QGIS plug-in is available at https://github.com/frankhereford/qgis-polygonizer/tree/main. 
-* The Vision Zero team, as part of the Austin Transportation and Public Works Department, operates a database of crashes in and around the Austin city limits. These's crashes are tracked by a point position, and in an effort to conduct analysis of the city's roadways in relation to crash location and crash severity, a set of polygons was created based on the street network. These polygons are of approximate equal area and have are formed in such a way that intersections are built into a single shape and interconnecting roads between intersections are divided into equal segments. By aggregating crashes into these polygons, comparisons become possible between intersections and road segments.
+* The Vision Zero team, as part of the Austin Transportation and Public Works Department, operates a database of crashes in and around the Austin city limits. A point position tracks these crashes, and to conduct an analysis of the city's roadways about crash location and crash severity, a set of polygons was created based on the street network. These polygons are of approximately equal area and have been formed in such a way that intersections are built into a single shape, and interconnecting roads between intersections are divided into equal segments. By aggregating crashes into these polygons, comparisons become possible between intersections and road segments.
 
+# Goal
+* Having the possibility of creating polygons inside the ArcPro environment.
+  
 # Highlights
 
 * Resumable: each stage can be skipped unless forced to rebuild.
