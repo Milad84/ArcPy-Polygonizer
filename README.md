@@ -41,7 +41,7 @@ If a pairwise tool isn’t available in your environment, swap to the classic eq
 
 # Input Assumptions
 
-* CTN_FC is a polyline centerline layer with:
+* A street line network (CTN_FC in my case) that is a polyline centerline layer with:
 * STREET_LEVEL (integer or convertible text).
 * A name field: prefers FULL_STREET_NAME, otherwise STREET_NAME.
 * Centerlines are reasonably snapped (default matching tolerance TOUCH_TOL = 5 ft).
