@@ -6,7 +6,7 @@ This implementation utilizes a series of tools already available in ArcPro, incl
 <img width="829" height="697" alt="image" src="https://github.com/user-attachments/assets/c1c2187a-cee5-4eb7-91c0-1495936f0394" />
 
 # Background
-* This script is inspired by the work done by my colleague Frank Hereford (https://github.com/frankhereford) at the Data and Technology Services of the Austin transportation and Public Works Department. The QGIS plug-in is available at https://github.com/frankhereford/qgis-polygonizer/tree/main. 
+* This script is inspired by the work done by my colleague Frank Hereford (https://github.com/frankhereford) at the Data and Technology Services of the Austin Transportation and Public Works Department. The QGIS plug-in is available at https://github.com/frankhereford/qgis-polygonizer/tree/main. 
 * The Vision Zero team, as part of the Austin Transportation and Public Works Department, operates a database of crashes in and around the Austin city limits. A point position tracks these crashes, and to conduct an analysis of the city's roadways about crash location and crash severity, a set of polygons was created based on the street network. These polygons are of approximately equal area and have been formed in such a way that intersections are built into a single shape, and interconnecting roads between intersections are divided into equal segments. By aggregating crashes into these polygons, comparisons become possible between intersections and road segments.
 
 # Goal
